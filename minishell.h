@@ -1,26 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 20:32:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/18 20:37:26 by aaoutem-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef MINISHELL_H
+# define MINISHELL_H
 
-#ifndef MINISHELL_H_
-# define MINISHELL_H_
-
-# include <stdio.h>
-# include <stdlib.h>
+#include <stdio.h>
 # include <unistd.h>
-# include <signal.h>
-# include <sys/stat.h>
-# include <dirent.h>
-# include <string.h>
+#include <stdlib.h>
+#include <stdlib.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 
+
+size_t		ft_strlen(char *s);
+char		*ft_strdup(char *s1);
+void		*ft_memcpy(void *dst, void *src, size_t n);
+void		*ft_calloc(size_t count, size_t size);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memset(void *b, int c, size_t len);
+void        error(char *err_msg);
+void        *ft_malloc(size_t size);
 
 
 #endif
