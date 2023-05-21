@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 16:05:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/21 17:00:48 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/05/21 14:56:40 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/05/21 14:57:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/header.h"
+#include "../minishell.h"
 
-void	env(t_env **env)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int fd;
-	t_env *tmp;
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
 	i = 0;
-	tmp = *env;
-	while (tmp)
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	if (!n)
+		return (0);
+	while (n-- > 0)
 	{
-		if (!tmp->env_or_export)
-		{
-			write(fd,tmp->env_var,ft_strlen(tmp->env_var));
-			write(1,"\n",1);
-		}
-		tmp = tmp->next;
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		if (p1[i] == '\0' && p2[i] == '\0')
+			return (0);
+		i++;
 	}
+	return (0);
 }

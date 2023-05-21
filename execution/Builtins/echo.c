@@ -6,12 +6,12 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:06:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/20 13:06:56 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/21 19:34:06 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../minishell.h"
+#include "../../Includes/header.h"
 
-void    echo()
+void    echo(t_env **env, char **args)
 {
 }
