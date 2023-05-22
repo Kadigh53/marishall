@@ -6,13 +6,13 @@
 /*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:06:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 01:59:28 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/05/22 12:30:02 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/header.h"
 
-void    echo(t_env **env, char **args)
+void    _echo(t_env **env, char **args)
 {
 	int i;
 	int fd;

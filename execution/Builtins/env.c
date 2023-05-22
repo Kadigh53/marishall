@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:05:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/21 17:00:48 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:30:06 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../Includes/header.h"
 
-void	env(t_env **env)
+void	_env(t_env **env)
 {
 	int	i;
 	int fd;

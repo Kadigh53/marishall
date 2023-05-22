@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   export.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:09:19 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/21 18:39:16 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:30:13 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*get_var(t_env **env, char *arg)
 	return (var);
 }
 
-void	export(t_env **env, char *arg)
+void	_export(t_env **env, char *arg)
 {
 	t_env	*node;
 	char	*arg_var;

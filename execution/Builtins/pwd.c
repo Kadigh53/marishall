@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pwd.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:07:07 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/20 15:01:28 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:30:16 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
 
-void    pwd()
+void    _pwd()
 {
 	int fd;
 	char *cwd;
