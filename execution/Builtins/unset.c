@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   unset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:55:03 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 12:29:37 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/05/22 16:19:27 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.h"
 
-void    search_var(t_env **env, char *var)
+void    unset_var(t_env **env, char *var)
 {
 	t_env	*tmp;
 
@@ -20,7 +20,12 @@ void    search_var(t_env **env, char *var)
 	while (tmp)
 	{
 		if (ft_strcmp(tmp->env_var, var, ft_strlen(var)) == 0)
-		{}
+		{
+			tmp->prev->next = tmp->next;
+			tmp->next->prev = tmp->prev;
+			free(tmp);
+			break ;
+		}
 		tmp = tmp->next;
 	}
 	return ;
@@ -35,7 +40,7 @@ void	_unset(t_env **env, char **args)
 	tmp = *env;
 	while (args[i])
 	{
-		search_var(env, args[i]);
+		unset_var(env, args[i]);
 		i++;
 	}
 }

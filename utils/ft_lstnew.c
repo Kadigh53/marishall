@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 19:58:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/20 16:28:37 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/22 16:13:49 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_list	*ft_lstnew(void *content)
 	else
 	{
 		new->content = content;
+		new->prev = NULL;
 		new->next = NULL;
 		return (new);
 	}

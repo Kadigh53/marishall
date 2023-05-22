@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cd.c                                               :+:      :+:    :+:   */
+/*   env_lst_to_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 13:05:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 19:54:45 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/05/22 16:24:59 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/05/22 16:51:21 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/header.h"
+#include "../Includes/header.h"
 
-void	cd_home(t_env **env)
+char	**envlist_toarray(t_env **env)
 {
+	char	**env_array;
 	t_env	*tmp;
+	int		i;
 
+	i = 0;
 	tmp = *env;
+	env_array = ft_malloc(sizeof(char *) * (ft_lstsize(*env) + 1));
 	while (tmp)
 	{
-		if (!ft_strncmp(tmp->env_var, "HOME=", 5))
-		{
-			chdir(tmp->env_var + 5);
-			break ;
-		}
-		tmp = tmp->next;
+		env_array[i] = ft_strdup(tmp->env_var);
+		i++;
 	}
-	return ;
+	return (env_array);
 }
-
-void	_cd(t_env **env, char *arg)
-{
-	if (!arg || (arg[0] == '~'))
-		cd_home(*env);
-	cd_fromcwd();
-	cd_from_abspath();
-}
-
-// int main()
-// {
-// 	chdir();
-// }

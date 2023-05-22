@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cd.c                                               :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 13:05:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 19:54:45 by aaoutem-         ###   ########.fr       */
+/*   Created: 2022/10/11 16:30:47 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/05/22 17:29:43 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/header.h"
+#include "../minishell.h"
 
-void	cd_home(t_env **env)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_env	*tmp;
+	char	*p;
+	size_t	i;
 
-	tmp = *env;
-	while (tmp)
+	i = ft_strlen(s1) + ft_strlen(s2);
+	if (!s1 || !s2)
+		return (NULL);
+	p = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char) + 1);
+	if (!p)
+		return (NULL);
+	else
 	{
-		if (!ft_strncmp(tmp->env_var, "HOME=", 5))
-		{
-			chdir(tmp->env_var + 5);
-			break ;
-		}
-		tmp = tmp->next;
+		ft_memcpy(p, s1, ft_strlen(s1) * sizeof(char));
+		ft_memcpy(p + ft_strlen(s1), s2, ft_strlen(s2) * sizeof(char));
+		p[i] = '\0';
+		return (p);
 	}
-	return ;
 }
-
-void	_cd(t_env **env, char *arg)
-{
-	if (!arg || (arg[0] == '~'))
-		cd_home(*env);
-	cd_fromcwd();
-	cd_from_abspath();
-}
-
-// int main()
-// {
-// 	chdir();
-// }
