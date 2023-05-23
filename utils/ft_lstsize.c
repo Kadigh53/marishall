@@ -6,15 +6,15 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:32:16 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/20 16:19:45 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/24 00:35:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../Includes/header.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_env *lst)
 {
-	t_list			*tmp;
+	t_env			*tmp;
 	unsigned int	i;
 
 	i = 0;

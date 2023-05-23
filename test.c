@@ -8,10 +8,10 @@ int main(int ac, char **argv)
 {
 	// printf("%d",access("/home/kadigh/Desktop/projects/minishell/execution", F_OK ));
 	char	*buff= malloc(1024);
-	// buff = argv[1];
-	getcwd(buff,62);
-	printf("%s\n",buff);
-	int a = chdir(buff);
+	// // buff = argv[1];
+	// getcwd(buff,62);
+	// printf("%s\n",buff);
+	int a = chdir("/Users/aaoutem-/");
 	printf("%d\n",a);
 	getcwd(buff,62);
 	printf("\n>>>\n%s\n",buff);

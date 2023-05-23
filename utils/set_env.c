@@ -6,13 +6,13 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:34:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/21 17:03:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/24 00:30:39 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/header.h"
 
-void	**env(char **envp)
+t_env	**env(char **envp)
 {
 	int	i;
 	t_env	*env;

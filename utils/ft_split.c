@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:29:57 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/23 13:39:11 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/05/23 20:19:41 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static char	**ft_free(char **p, int i)
+char	**ft_splitfree(char **p, int i)
 {
 	while (i >= 0)
 	{
@@ -30,7 +30,7 @@ static int	return_value(char *s, char c, int a, int i)
 	return (a + 1);
 }
 
-static int	ft_strsnbr(char *s, char c, int para, int mode)
+int	ft_strsnbr(char *s, char c, int para, int mode)
 {
 	int		i;
 	int		a;
@@ -90,7 +90,7 @@ char	**ft_split(char *s, char c)
 	{
 		p[i - 1] = word_return(s, c, i);
 		if (!p[i - 1])
-			return (ft_free(p, i));
+			return (ft_splitfree(p, i));
 		// printf("%s\n", p[i - 1]);
 		i++;
 	}

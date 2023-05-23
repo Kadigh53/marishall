@@ -6,15 +6,15 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:12:48 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 16:15:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/24 00:34:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../Includes/header.h"
 
-void	ft_lstadd_back(void **lst, void *new)
+void	ft_lstadd_back(t_env **lst, t_env *new)
 {
-	void	*tmp;
+	t_env	*tmp;
 
 	tmp = (*lst);
 	if (*lst)

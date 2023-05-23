@@ -6,22 +6,22 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 19:58:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 16:13:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/24 00:33:07 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "../Includes/header.h"
 
-t_list	*ft_lstnew(void *content)
+t_env	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_env	*new;
 
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_env));
 	if (!new)
 		return (NULL);
 	else
 	{
-		new->content = content;
+		new->env_var = content;
 		new->prev = NULL;
 		new->next = NULL;
 		return (new);

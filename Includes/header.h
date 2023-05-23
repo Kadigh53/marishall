@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:23:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 16:03:33 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/23 19:40:17 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,9 @@ typedef struct env
 	struct env	*prev;
 	struct env	*next;
 }	t_env;
+
+
+int		ft_strsnbr(char *s, char c, int para, int mode);
+char	**ft_split(char *s, char c);
 
 #endif
