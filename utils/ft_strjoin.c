@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:30:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 17:29:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/23 01:56:03 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ft_memcpy(p, s1, ft_strlen(s1) * sizeof(char));
 		ft_memcpy(p + ft_strlen(s1), s2, ft_strlen(s2) * sizeof(char));
 		p[i] = '\0';
+		free(s1);
 		return (p);
 	}
 }
