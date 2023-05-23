@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:29:57 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 17:29:28 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/23 13:39:11 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static char	**ft_free(char **p, int i)
 	return (NULL);
 }
 
-static int	return_value(char const *s, char c, int a, int i)
+static int	return_value(char *s, char c, int a, int i)
 {
 	if (s[i - 1] == c)
 		return (a);
 	return (a + 1);
 }
 
-static int	ft_strsnbr(char const *s, char c, int para, int mode)
+static int	ft_strsnbr(char *s, char c, int para, int mode)
 {
 	int		i;
 	int		a;
@@ -57,7 +57,7 @@ static int	ft_strsnbr(char const *s, char c, int para, int mode)
 	return (i - 1);
 }
 
-static char	*word_return(char const *s, char c, int para)
+static char	*word_return(char *s, char c, int para)
 {
 	int	i;
 	int	j;
@@ -73,7 +73,7 @@ static char	*word_return(char const *s, char c, int para)
 	return (ft_substr(s, j, i - j + 1));
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**p;
 	int		i;
@@ -91,8 +91,16 @@ char	**ft_split(char const *s, char c)
 		p[i - 1] = word_return(s, c, i);
 		if (!p[i - 1])
 			return (ft_free(p, i));
+		// printf("%s\n", p[i - 1]);
 		i++;
 	}
 	p[i - 1] = NULL;
 	return (p);
 }
+
+// int main ()
+// {
+// 	// printf("%s", ft_split("abc", ' ')[0]);
+// 	char *p="aaa/bbb/ccc";
+// 	ft_split(p, '/');
+// }
