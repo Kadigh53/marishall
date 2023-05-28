@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   export.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:09:19 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 12:30:13 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/05/28 02:41:39 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../Includes/header.h"
+#include "../../minishell.h"
 
 void	export_with_noarg(t_env **env)
 {
 	t_env	*node;
 	int		fd;
 
-	node =  *env;
-	// open("",O_RDWR | O_CREAT | O_APPEND, S_IRWXU);	
+	fd = 1;
+	node = *env;
+	// open("",O_RDWR | O_CREAT | O_APPEND, S_IRWXU);
 	while (node)
 	{
 		printf("declare -x %s\n", node->env_var);
@@ -33,7 +34,7 @@ void	export_with_noarg(t_env **env)
 
 char	*get_var(t_env **env, char *arg)
 {
-	int	i;
+	int		i;
 	t_env	*node;
 	char	*var;
 
@@ -51,7 +52,7 @@ char	*get_var(t_env **env, char *arg)
 	return (var);
 }
 
-void	_export(t_env **env, char *arg)
+void	_export(t_env **env, char **arg)
 {
 	t_env	*node;
 	char	*arg_var;
@@ -61,16 +62,17 @@ void	_export(t_env **env, char *arg)
 	// dup2();
 	//	if there is export with  multiple args think about recurssif funcions
 	node = *env;
-	if (!arg)
+	if (!arg || !arg[0])
 		export_with_noarg(env);
-	arg_var = get_var(env, arg);
+	arg_var = get_var(env, arg[0]);
 	if (!arg_var)
 		return ;
-	while(node)
+	while (node)
 	{
-		if (!ft_strncmp(get_var(env, node->env_var),arg_var,ft_strlen(arg_var)))
+		if (!ft_strncmp(get_var(env, node->env_var), arg_var,
+				ft_strlen(arg_var)))
 		{
-			node->env_var = arg;
+			node->env_var = arg[0];
 			free(arg_var);
 			return ;
 		}
@@ -82,7 +84,3 @@ void	_export(t_env **env, char *arg)
 	// close(fd);
 	return ;
 }
-
-// int main()
-// {	
-// }

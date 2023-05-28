@@ -1,0 +1,21 @@
+total 152
+-rw-r--r--  1 aaoutem-  candidate   1.2K May 23 17:00 env_lst_to_array.c
+-rw-r--r--  1 aaoutem-  candidate   1.0K May 23 17:00 error.c
+-rw-r--r--  1 aaoutem-  candidate   994B May 23 17:00 ft_bzero.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 23 17:00 ft_calloc.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 24 00:34 ft_lstadd_back.c
+-rw-r--r--  1 aaoutem-  candidate   1.0K May 24 00:35 ft_lstadd_front.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 24 00:33 ft_lstnew.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 24 00:35 ft_lstsize.c
+-rw-r--r--  1 aaoutem-  candidate   1.0K May 23 17:00 ft_malloc.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 23 17:00 ft_memcpy.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 23 17:00 ft_memset.c
+-rw-r--r--  1 aaoutem-  candidate   2.2K May 27 03:19 ft_split.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 23 17:00 ft_strdup.c
+-rw-r--r--  1 aaoutem-  candidate   1.3K May 27 03:16 ft_strjoin.c
+-rw-r--r--  1 aaoutem-  candidate   1.0K May 23 17:51 ft_strlen.c
+-rw-r--r--  1 aaoutem-  candidate   1.2K May 27 03:16 ft_strncmp.c
+-rw-r--r--  1 aaoutem-  candidate   1.3K May 27 03:19 ft_substr.c
+-rw-r--r--  1 aaoutem-  candidate   1.3K May 27 03:21 get_newenv.c
+-rw-r--r--  1 aaoutem-  candidate   1.1K May 27 03:21 set_env.c
+-rw-r--r--  1 aaoutem-  candidate     0B May 27 22:36 txt

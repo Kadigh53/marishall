@@ -12,6 +12,6 @@
 
 #include "../Includes/header.h"
 
-void	pipes()
+void	pipes(void)
 {
 }

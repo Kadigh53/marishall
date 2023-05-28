@@ -6,13 +6,13 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:30:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/23 17:50:42 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/27 03:16:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*p;
 	size_t	i;

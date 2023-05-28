@@ -6,17 +6,17 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 14:56:40 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/21 14:57:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/27 03:16:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	size_t i;
+	unsigned char *p1;
+	unsigned char *p2;
 
 	i = 0;
 	p1 = (unsigned char *)s1;

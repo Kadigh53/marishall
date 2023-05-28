@@ -6,17 +6,17 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:57:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/21 15:58:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/27 03:19:28 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{	
-	char			*p;
-	unsigned int	j;
-	size_t			k;
+char	*ft_substr(char *s, unsigned int start, size_t len)
+{
+	char *p;
+	unsigned int j;
+	size_t k;
 
 	j = 0;
 	k = ft_strlen(s) - start + 1;
@@ -35,5 +35,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		p[j] = '\0';
 		return (p);
 	}
-    return (NULL);
+	return (NULL);
 }

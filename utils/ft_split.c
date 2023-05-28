@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:29:57 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/23 20:19:41 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/27 03:19:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static int	return_value(char *s, char c, int a, int i)
 
 int	ft_strsnbr(char *s, char c, int para, int mode)
 {
-	int		i;
-	int		a;
+	int	i;
+	int	a;
 
 	i = 0;
 	a = 0;

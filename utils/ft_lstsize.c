@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 20:32:16 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/24 00:35:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/27 23:18:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/header.h"
+#include "../minishell.h"
 
 int	ft_lstsize(t_env *lst)
 {
@@ -20,7 +20,7 @@ int	ft_lstsize(t_env *lst)
 	i = 0;
 	if (!lst)
 		return (0);
-	tmp = lst ;
+	tmp = lst;
 	while (tmp)
 	{
 		i++;

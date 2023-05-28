@@ -6,20 +6,20 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:55:03 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/22 16:19:27 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/28 02:25:35 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/header.h"
+#include "../../minishell.h"
 
-void    unset_var(t_env **env, char *var)
+void	unset_var(t_env **env, char *var)
 {
 	t_env	*tmp;
 
 	tmp = *env;
 	while (tmp)
 	{
-		if (ft_strcmp(tmp->env_var, var, ft_strlen(var)) == 0)
+		if (ft_strncmp(tmp->env_var, var, ft_strlen(var)) == 0)
 		{
 			tmp->prev->next = tmp->next;
 			tmp->next->prev = tmp->prev;
@@ -34,7 +34,7 @@ void    unset_var(t_env **env, char *var)
 void	_unset(t_env **env, char **args)
 {
 	t_env	*tmp;
-	int     i;
+	int		i;
 
 	i = 0;
 	tmp = *env;

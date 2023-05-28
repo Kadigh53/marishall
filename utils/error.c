@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:30:21 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/19 14:35:59 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/28 03:38:09 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error(char *err_msg)
 {
-	write(2,err_msg,ft_strlen(err_msg));
+	write(2, err_msg, ft_strlen(err_msg));
 	exit(EXIT_FAILURE);
 }

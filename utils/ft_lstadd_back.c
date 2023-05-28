@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:12:48 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/24 00:34:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/28 03:09:21 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Includes/header.h"
+#include "../minishell.h"
 
 void	ft_lstadd_back(t_env **lst, t_env *new)
 {

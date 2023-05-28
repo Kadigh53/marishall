@@ -1,5 +1,34 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/aaoutem-/Desktop/projects/minishell'
-GCC     minishell.c   -o minishell
+gcc -lreadline  utils/error.c 
+gcc -lreadline  utils/ft_strncmp.c 
+gcc -lreadline  utils/ft_strlen.c 
+gcc -lreadline  utils/ft_substr.c 
+gcc -lreadline  utils/ft_strdup.c 
+gcc -lreadline  utils/ft_bzero.c 
+gcc -lreadline  utils/ft_memcpy.c 
+gcc -lreadline  utils/ft_memset.c 
+gcc -lreadline  utils/ft_calloc.c 
+ 
+gcc -lreadline  utils/ft_malloc.c 
+gcc -lreadline  utils/ft_split.c 
+gcc -lreadline  utils/ft_strjoin.c 
+gcc -lreadline  utils/set_env.c 
+gcc -lreadline  utils/ft_lstnew.c 
+gcc -lreadline  utils/ft_lstsize.c 
+gcc -lreadline  utils/ft_lstadd_back.c 
+gcc -lreadline  utils/ft_lstadd_front.c 
+gcc -lreadline  utils/get_newenv.c 
+gcc -lreadline  execution/cmd_execute.c 
+ 
+gcc -lreadline  execution/Builtins/cd.c 
+gcc -lreadline  execution/Builtins/pwd.c 
+gcc -lreadline  execution/Builtins/env.c 
+gcc -lreadline  execution/Builtins/echo.c 
+gcc -lreadline  execution/Builtins/exit.c 
+gcc -lreadline  execution/Builtins/unset.c 
+gcc -lreadline  execution/Builtins/export.c 
+gcc -lreadline  minishell.c 
+gcc -lreadline  utils/error.o utils/ft_strncmp.o utils/ft_strlen.o utils/ft_substr.o utils/ft_strdup.o utils/ft_bzero.o utils/ft_memcpy.o utils/ft_memset.o utils/ft_calloc.o utils/ft_malloc.o utils/ft_split.o utils/ft_strjoin.o utils/set_env.o utils/ft_lstnew.o utils/ft_lstsize.o utils/ft_lstadd_back.o utils/ft_lstadd_front.o utils/get_newenv.o utils/set_env.o utils/ft_strlen.o execution/cmd_execute.o execution/Builtins/cd.o execution/Builtins/pwd.o execution/Builtins/env.o execution/Builtins/echo.o execution/Builtins/exit.o execution/Builtins/unset.o execution/Builtins/export.o minishell.o -o minishell
 make: Leaving directory `/Users/aaoutem-/Desktop/projects/minishell'
  
