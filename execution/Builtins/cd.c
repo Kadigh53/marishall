@@ -6,11 +6,67 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:05:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 05:27:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/28 23:29:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
+
+
+// char	*get_path(t_env **env, char *dir)
+// {
+// 	char	*cwd;
+// 	int		i;
+// 	int		j;
+
+// 	cwd = ft_malloc(1024);
+// 	if (!getcwd(cwd, 1024))
+// 		error("ERROR:1223");
+// 	i = ft_strlen(cwd) - 1;
+// 	if (!ft_strncmp(dir, "..", 3))
+// 	{
+// 		while (cwd[i] != '/')
+// 			i--;
+// 		j = i - 1;
+// 		while (cwd[j] != '/')
+// 			j--;
+// 		return (ft_substr(cwd, j + 1, i - j));
+// 	}
+// 	else if (dir[0] == '.' && ft_strlen(dir) == 1)
+// 		return (NULL);
+// 	else if (dir[0] == '~' && ft_strlen(dir) == 1)
+// 		return (ft_strdup(get_env_var(env, "HOME=")));
+// 	else
+// 		return (dir);
+// 	free(cwd);
+// }
+
+// void	cd_fromcwd(t_env **env, char *arg)
+// {
+// 	char	**splited_arg;
+// 	char	*path;
+// 	char	*cwd;
+// 	int		i;
+
+// 	i = 0;
+// 	path = NULL;
+// 	printf("arg : %s", arg);
+// 	splited_arg = ft_split(arg, '/');
+// 	cwd = ft_malloc(1024);
+// 	if (getcwd(cwd, 1024))
+// 		path = ft_strjoin(cwd, "/");
+// 	while (splited_arg[i])
+// 	{
+// 		path = ft_strjoin(path, get_path(env, splited_arg[i]));
+// 		path = ft_strjoin(path, "/");
+// 		i++;
+// 	}
+// 	if (chdir(path) == -1)
+// 		write(2, "\n", 17);
+// 	free(splited_arg);
+// 	free(cwd);
+// 	free(path);
+// }
 
 char	*get_env_var(t_env **env, char *str)
 {
@@ -31,61 +87,6 @@ void	cd_with_abspath(char *arg)
 	if (chdir(arg) == -1)
 		error("ERROR:chdir() failed\n");
 }
-
-char	*get_path(t_env **env, char *dir)
-{
-	char	*cwd;
-	int		i;
-	int		j;
-
-	cwd = ft_malloc(1024);
-	if (getcwd(cwd, 1024))
-		error("ERROR:");
-	i = ft_strlen(cwd) - 1;
-	if (!ft_strncmp(dir, "..", 3))
-	{
-		while (cwd[i] != '/')
-			i--;
-		j = i - 1;
-		while (cwd[j] != '/')
-			j--;
-		return (ft_substr(cwd, j + 1, i - j));
-	}
-	else if (dir[0] == '.' && ft_strlen(dir) == 1)
-		return (NULL);
-	else if (dir[0] == '~' && ft_strlen(dir) == 1)
-		return (ft_strdup(get_env_var(env, "HOME=")));
-	else
-		return (dir);
-	free(cwd);
-}
-
-void	cd_fromcwd(t_env **env, char *arg)
-{
-	char	**splited_arg;
-	char	*path;
-	char	*cwd;
-	int		i;
-
-	i = 0;
-	path = NULL;
-	splited_arg = ft_split(arg, '/');
-	cwd = ft_malloc(1024);
-	if (getcwd(cwd, 1024))
-		path = ft_strjoin(cwd, "/");
-	while (splited_arg[i])
-	{
-		path = ft_strjoin(path, get_path(env, splited_arg[i]));
-		path = ft_strjoin(path, "/");
-		i++;
-	}
-	if (chdir(path) == -1)
-		write(2, "cd: HOME not set\n", 17);
-	free(splited_arg);
-	free(cwd);
-	free(path);
-}
-
 void	_cd(t_env **env, char *arg)
 {
 	char	*PWD;
@@ -104,8 +105,11 @@ void	_cd(t_env **env, char *arg)
 	{
 		if (!access(arg, F_OK))
 			cd_with_abspath(arg);
-		else
-			cd_fromcwd(env, arg);
+		// else
+		// {
+		// 	printf("2 >> arg : %s", arg);
+		// 	cd_fromcwd(env, arg);
+		// }
 	}
 	PWD = ft_malloc(1024);
 	getcwd(PWD, 1024);

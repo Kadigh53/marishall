@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:22:38 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 04:58:59 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/05/28 10:14:51 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int	a_builtin_cmd(char *cmd, char **args, t_env **env)
 {
 	if (!ft_strncmp("cd", cmd, ft_strlen(cmd)))
 		_cd(env, args[0]);
-	// else if (ft_strncmp("echo",cmd, ft_strlen(cmd)))
-	// 	_echo(args);
+	else if (ft_strncmp("echo", cmd, ft_strlen(cmd)))
+		_echo(args);
 	// else if (ft_strncmp("env",cmd, ft_strlen(cmd)))
 	// 	_env(env);
 	// else if (ft_strncmp("exit",cmd, ft_strlen(cmd)))

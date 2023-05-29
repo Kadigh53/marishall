@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sun May 28 01:15:14 2023
+# Make data base, printed on Sun May 28 08:35:25 2023
 
 # Variables
 
@@ -20,11 +20,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
-# makefile (from `Makefile', line 17)
-SRC = utils/error.c utils/ft_strncmp.c utils/ft_strlen.c utils/ft_substr.c utils/ft_strdup.c utils/ft_bzero.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_calloc.c utils/ft_malloc.c utils/ft_split.c utils/ft_strjoin.c utils/set_env.c utils/ft_lstnew.c utils/ft_lstsize.c utils/ft_lstadd_back.c utils/ft_lstadd_front.c utils/get_newenv.c utils/set_env.c utils/ft_strlen.c execution/cmd_execute.c execution/Builtins/cd.c execution/Builtins/pwd.c execution/Builtins/env.c execution/Builtins/echo.c execution/Builtins/exit.c execution/Builtins/unset.c execution/Builtins/export.c minishell.c 
+# makefile (from `Makefile', line 19)
+SRC = minishell.c utils/ft_strncmp.c utils/ft_strlen.c utils/ft_substr.c utils/ft_strdup.c utils/ft_bzero.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_calloc.c utils/ft_malloc.c utils/ft_split.c utils/ft_strjoin.c utils/set_env.c utils/ft_lstnew.c utils/ft_lstsize.c utils/ft_lstadd_back.c utils/ft_lstadd_front.c utils/get_newenv.c utils/set_env.c execution/cmd_execute.c execution/Builtins/cd.c execution/Builtins/pwd.c execution/Builtins/env.c execution/Builtins/echo.c execution/Builtins/exit.c execution/Builtins/unset.c execution/Builtins/export.c 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
+ 
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
@@ -32,7 +33,7 @@ SRC = utils/error.c utils/ft_strncmp.c utils/ft_strlen.c utils/ft_substr.c utils
 CURDIR := /Users/aaoutem-/Desktop/projects/minishell
 # makefile
 SHELL = /bin/sh
-# makefile (from `Makefile', line 16)
+# makefile (from `Makefile', line 18)
 RM = rm
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en","availableLanguages":{},"_languagePackSupport":true}
@@ -49,7 +50,7 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from `Makefile', line 47)
 OBJ_F = ${SRC:.c=.o}
 # environment
-LaunchInstanceID = EC3B9D86-84D6-45CE-A277-D9DCA5AFD836
+LaunchInstanceID = 8AD6DDD7-0B2E-4FA6-8432-6860ADA36284
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -57,7 +58,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.y7xoKVc5EZ/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eW79cslc7c/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -94,7 +95,7 @@ MAKE = $(MAKE_COMMAND)
 LC_TERMINAL = iTerm2
 # environment
 SHLVL = 3
-# makefile (from `Makefile', line 14)
+# makefile (from `Makefile', line 16)
 CC = gcc
 # environment
 VSCODE_CRASH_REPORTER_SANDBOXED_HINT = 1
@@ -107,8 +108,8 @@ USER = aaoutem-
 # default
 MAKECMDGOALS := all
 # environment
-TERM_SESSION_ID = w1t0p0:94FAC45D-2EBC-48D4-A633-598E21351809
-# makefile (from `Makefile', line 13)
+TERM_SESSION_ID = w0t0p0:5855B44A-ECB8-4AEC-84C3-1DF34E18EF11
+# makefile (from `Makefile', line 15)
 NAME = minishell
 # environment
 LESS = -R
@@ -126,8 +127,6 @@ TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cgx00033z8/T/
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/aaoutem-/Library/Application Support/Code/1.78-main.sock
-# environment
-MallocNanoZone = 0
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -145,7 +144,7 @@ LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +F = $(notdir $+)
 # environment
-ITERM_SESSION_ID = w1t0p0:94FAC45D-2EBC-48D4-A633-598E21351809
+ITERM_SESSION_ID = w0t0p0:5855B44A-ECB8-4AEC-84C3-1DF34E18EF11
 # environment
 COLORFGBG = 7;0
 # environment
@@ -168,8 +167,8 @@ SECURITYSESSIONID = 186a6
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# makefile (from `Makefile', line 15)
-FLAGS = -lreadline 
+# makefile (from `Makefile', line 17)
+FLAGS = -Wall
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -179,9 +178,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 14240
+VSCODE_PID = 90313
 # variable set hash-table stats:
-# Load=84/1024=8%, Rehash=0, Collisions=4/117=3%
+# Load=83/1024=8%, Rehash=0, Collisions=4/116=3%
 
 # Pattern-specific Variable Values
 
@@ -189,10 +188,9 @@ VSCODE_PID = 14240
 
 # Directories
 
-# utils (device 16777228, inode 6286211): No files, no impossibilities so far.
-# . (device 16777228, inode 6286121): 14 files, no impossibilities.
+# . (device 16777228, inode 6286121): 16 files, no impossibilities.
 
-# 14 files, no impossibilities in 2 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -289,6 +287,7 @@ utils/set_env.o:
 # Not a target:
 utils/ft_lstsize.o:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -324,9 +323,8 @@ utils/get_newenv.c:
 
 # Not a target:
 Makefile:
- 
 #  Implicit rule search has been done.
-#  Last modified 2023-05-28 01:14:50
+#  Last modified 2023-05-28 02:19:00
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -368,9 +366,9 @@ utils/ft_malloc.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-minishell: utils/error.o utils/ft_strncmp.o utils/ft_strlen.o utils/ft_substr.o utils/ft_strdup.o utils/ft_bzero.o utils/ft_memcpy.o utils/ft_memset.o utils/ft_calloc.o utils/ft_malloc.o utils/ft_split.o utils/ft_strjoin.o utils/set_env.o utils/ft_lstnew.o utils/ft_lstsize.o utils/ft_lstadd_back.o utils/ft_lstadd_front.o utils/get_newenv.o utils/set_env.o utils/ft_strlen.o execution/cmd_execute.o execution/Builtins/cd.o execution/Builtins/pwd.o execution/Builtins/env.o execution/Builtins/echo.o execution/Builtins/exit.o execution/Builtins/unset.o execution/Builtins/export.o minishell.o utils/error.c utils/ft_strncmp.c utils/ft_strlen.c utils/ft_substr.c utils/ft_strdup.c utils/ft_bzero.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_calloc.c utils/ft_malloc.c utils/ft_split.c utils/ft_strjoin.c utils/set_env.c utils/ft_lstnew.c utils/ft_lstsize.c utils/ft_lstadd_back.c utils/ft_lstadd_front.c utils/get_newenv.c utils/set_env.c utils/ft_strlen.c execution/cmd_execute.c execution/Builtins/cd.c execution/Builtins/pwd.c execution/Builtins/env.c execution/Builtins/echo.c execution/Builtins/exit.c execution/Builtins/unset.c execution/Builtins/export.c minishell.c
+minishell: minishell.o utils/ft_strncmp.o utils/ft_strlen.o utils/ft_substr.o utils/ft_strdup.o utils/ft_bzero.o utils/ft_memcpy.o utils/ft_memset.o utils/ft_calloc.o utils/ft_malloc.o utils/ft_split.o utils/ft_strjoin.o utils/set_env.o utils/ft_lstnew.o utils/ft_lstsize.o utils/ft_lstadd_back.o utils/ft_lstadd_front.o utils/get_newenv.o utils/set_env.o execution/cmd_execute.o execution/Builtins/cd.o execution/Builtins/pwd.o execution/Builtins/env.o execution/Builtins/echo.o execution/Builtins/exit.o execution/Builtins/unset.o execution/Builtins/export.o minishell.c utils/ft_strncmp.c utils/ft_strlen.c utils/ft_substr.c utils/ft_strdup.c utils/ft_bzero.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_calloc.c utils/ft_malloc.c utils/ft_split.c utils/ft_strjoin.c utils/set_env.c utils/ft_lstnew.c utils/ft_lstsize.c utils/ft_lstadd_back.c utils/ft_lstadd_front.c utils/get_newenv.c utils/set_env.c execution/cmd_execute.c execution/Builtins/cd.c execution/Builtins/pwd.c execution/Builtins/env.c execution/Builtins/echo.c execution/Builtins/exit.c execution/Builtins/unset.c execution/Builtins/export.c
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2023-05-28 05:33:51
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -379,11 +377,33 @@ minishell: utils/error.o utils/ft_strncmp.o utils/ft_strlen.o utils/ft_substr.o 
 	${CC} ${FLAGS} ${OBJ_F} -o minishell
 	
 
-# Not a target:
-minishell.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+minishell.o: minishell.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `minishell'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := minishell.o
+# automatic
+# % := 
+# automatic
+# * := minishell
+# automatic
+# + := minishell.c
+# automatic
+# | := 
+# automatic
+# < := minishell.c
+# automatic
+# ^ := minishell.c
+# automatic
+# ? := minishell.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
+#  commands to execute (from `Makefile', line 55):
+	${CC} ${FLAGS} $< 
+	
 
 # Not a target:
 execution/Builtins/env.o:
@@ -409,11 +429,14 @@ execution/Builtins/exit.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-fclean:
+fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 61):
+	${RM} ${NAME}
+	
 
 # Not a target:
 utils/set_env.c:
@@ -426,34 +449,6 @@ utils/ft_lstsize.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-utils/error.o: utils/error.c
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: `utils/error'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := utils/error.o
-# automatic
-# % := 
-# automatic
-# * := utils/error
-# automatic
-# + := utils/error.c
-# automatic
-# | := 
-# automatic
-# < := utils/error.c
-# automatic
-# ^ := utils/error.c
-# automatic
-# ? := utils/error.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
-#  commands to execute (from `Makefile', line 55):
-	${CC} ${FLAGS} $< 
-	
 
 # Not a target:
 execution/Builtins/export.c:
@@ -509,7 +504,7 @@ utils/ft_lstadd_front.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-re:
+re: fclean all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -538,6 +533,9 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 58):
+	${RM} ${OBJ_F}
+	
 
 # Not a target:
 execution/Builtins/echo.o:
@@ -571,12 +569,16 @@ utils/ft_strlen.c:
 
 # Not a target:
 minishell.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2023-05-28 05:34:45
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 utils/ft_strjoin.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -594,20 +596,10 @@ execution/Builtins/exit.c:
 #  File has not been updated.
 
 # Not a target:
-utils/error.c:
-#  Implicit rule search has been done.
-#  Last modified 2023-05-23 17:00:23
-#  File has been updated.
-#  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
 utils/ft_bzero.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
 utils/ft_lstadd_back.c:
@@ -622,7 +614,7 @@ execution/Builtins/unset.c:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=17/142=12%
+# Load=61/1024=6%, Rehash=0, Collisions=16/139=12%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -634,6 +626,6 @@ execution/Builtins/unset.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun May 28 01:15:14 2023
+# Finished Make data base on Sun May 28 08:35:25 2023
 
  
