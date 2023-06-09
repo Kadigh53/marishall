@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:07:07 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 02:41:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 19:45:56 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	_pwd(void)
 		error("ERROR:gtcwd failed\n");
 	free(cwd);
 }
-// /Users/aaoutem-/Desktop/projects/minishell/execution/Builtins

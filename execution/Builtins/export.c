@@ -6,11 +6,24 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:09:19 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/06/09 17:04:25 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 19:45:45 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
+
+int	is_assigned(char *arg)
+{
+	int	i;
+
+	i = -1;
+	while (arg[++i])
+	{
+		if (arg[i] == '=')
+			return (i);
+	}
+	return (0);
+}
 
 void	export_with_noarg(t_env **env)
 {
@@ -19,19 +32,77 @@ void	export_with_noarg(t_env **env)
 
 	fd = 1;
 	node = *env;
-	// open("",O_RDWR | O_CREAT | O_APPEND, S_IRWXU);
 	while (node)
 	{
 		printf("declare -x %s\n", node->env_var);
-		// write(fd, "declare -x ", 11);
-		// write(fd, node->env_var, ft_strlen(node->env_var));
-		// write(fd, "\n", 1);
 		node = node->next;
 	}
-	// close(fd);
 	return ;
 }
 
+
+void	export_to_env(t_env **env, char *arg, int var_len)
+{
+	t_env	*tmp;
+	t_env	*node;
+
+	tmp = *env;
+	while (tmp)
+	{
+		if (!ft_strncmp(tmp->env_var, arg, var_len))
+		{
+			tmp->env_var = arg;
+			return ;
+			// node = ft_lstnew(arg);
+			// node->env_or_export = 0;
+			// ft_lstadd_back(env, node);
+		}
+		tmp = tmp->next;
+	}
+	node = ft_lstnew(arg);
+	node->env_or_export = 0;
+	ft_lstadd_back(env, node);
+}
+
+void	export_only(t_env **env, char *arg)
+{
+	t_env	*tmp;
+	t_env	*node;
+
+	tmp = *env;
+	while (tmp)
+	{
+		if (!ft_strncmp(tmp->env_var, arg, ft_strlen(arg)))
+			return ;
+		tmp = tmp->next;
+	}
+	node = ft_lstnew(arg);
+	node->env_or_export = 1;
+	ft_lstadd_back(env, node);
+	return ;
+}
+
+void	_export(t_env **env, char **args)
+{
+	int	i;
+
+	i = 0;
+	if (!args || !args[0])
+	{
+		export_with_noarg(env);
+		return ;
+	}
+	while (args[i])
+	{
+		if (is_assigned(args[i]))
+			export_to_env(env, args[i], is_assigned(args[i]));
+		else
+			export_only(env, args[i]);
+		i++;
+	}
+}
+
+/*
 char	*get_var(t_env **env, char *arg)
 {
 	int		i;
@@ -39,6 +110,8 @@ char	*get_var(t_env **env, char *arg)
 	t_env	*tmp;
 	char	*var;
 
+	printf("%s\n", arg);
+	return (NULL);
 	i = 0;
 	tmp = *env;
 	while (arg[i] && arg[i] != '=')
@@ -95,3 +168,4 @@ void	_export(t_env **env, char **arg)
 	// close(fd);
 	return ;
 }
+*/
