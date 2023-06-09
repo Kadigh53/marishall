@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 16:23:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/27 23:07:41 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 11:21:13 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct env
 }	t_env;
 
 t_env	**set_env(char **envp);
-t_env	*ft_lstnew(void *content);
+t_env	*ft_lstnew(char *content);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 int		ft_strsnbr(char *s, char c, int para, int mode);

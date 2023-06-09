@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:06:37 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 10:20:17 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 13:03:06 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ void	_echo(char **args)
 	fd = 1;
 	i = 1;
 	n = false;
-	if (!args[0] || !args)
-		return ;
 	if (ft_strncmp(args[0], "-n", 2) == 0)
 	{
 		while (args[0][i] && args[0][i] == 'n')
@@ -68,23 +66,22 @@ void	_echo(char **args)
 		if (i == (int)ft_strlen(args[0]))
 			n = true;
 	}
-	i = 0;
-	if (n)
-		i = 1;
-	while (args[i])
+	if (!args[0] || !args)
+		return ;
+	else
 	{
-		write(fd, args[i], ft_strlen(args[i]));
-		if (args[i + 1])
-			write(fd, " ", 1);
-		i++;
+		i = 0;
+		if (n)
+			i = 1;
+		while (args[i])
+		{
+			write(fd, args[i], ft_strlen(args[i]));
+			if (args[i + 1])
+				write(fd, " ", 1);
+			i++;
+		}
 	}
 	if (!n)
 		write(fd, "\n", 1);
 	return ;
 }
-
-// int main(int argc, char **argv)
-// {
-// 	char **args = argv+1;
-// 	_echo(args);
-// }

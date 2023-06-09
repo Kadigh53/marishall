@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:29:57 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/27 03:19:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 09:01:40 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ char	**ft_split(char *s, char c)
 		p[i - 1] = word_return(s, c, i);
 		if (!p[i - 1])
 			return (ft_splitfree(p, i));
-		// printf("%s\n", p[i - 1]);
 		i++;
 	}
 	p[i - 1] = NULL;

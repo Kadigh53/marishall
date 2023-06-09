@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:55:03 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 02:25:35 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:09:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	unset_var(t_env **env, char *var)
 		if (ft_strncmp(tmp->env_var, var, ft_strlen(var)) == 0)
 		{
 			tmp->prev->next = tmp->next;
-			tmp->next->prev = tmp->prev;
+			if (tmp->next)
+				tmp->next->prev = tmp->prev;
 			free(tmp);
 			break ;
 		}

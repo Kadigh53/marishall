@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 23:11:39 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 03:51:30 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:56:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct env
 }	t_env;
 
 t_env	*set_env(char **envp);
-t_env	*ft_lstnew(void *content);
+t_env	*ft_lstnew(char *content);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 int		ft_strsnbr(char *s, char c, int para, int mode);
@@ -41,6 +41,7 @@ void	*ft_malloc(size_t size);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_lstsize(t_env *lst);
 void	ft_lstadd_back(t_env **lst, t_env *new);
+size_t	ft_max(size_t a, size_t b);
 
 /* *************BUILTIN CMDS**************/
 

@@ -6,67 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 13:05:47 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 23:29:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 09:52:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
-
-
-// char	*get_path(t_env **env, char *dir)
-// {
-// 	char	*cwd;
-// 	int		i;
-// 	int		j;
-
-// 	cwd = ft_malloc(1024);
-// 	if (!getcwd(cwd, 1024))
-// 		error("ERROR:1223");
-// 	i = ft_strlen(cwd) - 1;
-// 	if (!ft_strncmp(dir, "..", 3))
-// 	{
-// 		while (cwd[i] != '/')
-// 			i--;
-// 		j = i - 1;
-// 		while (cwd[j] != '/')
-// 			j--;
-// 		return (ft_substr(cwd, j + 1, i - j));
-// 	}
-// 	else if (dir[0] == '.' && ft_strlen(dir) == 1)
-// 		return (NULL);
-// 	else if (dir[0] == '~' && ft_strlen(dir) == 1)
-// 		return (ft_strdup(get_env_var(env, "HOME=")));
-// 	else
-// 		return (dir);
-// 	free(cwd);
-// }
-
-// void	cd_fromcwd(t_env **env, char *arg)
-// {
-// 	char	**splited_arg;
-// 	char	*path;
-// 	char	*cwd;
-// 	int		i;
-
-// 	i = 0;
-// 	path = NULL;
-// 	printf("arg : %s", arg);
-// 	splited_arg = ft_split(arg, '/');
-// 	cwd = ft_malloc(1024);
-// 	if (getcwd(cwd, 1024))
-// 		path = ft_strjoin(cwd, "/");
-// 	while (splited_arg[i])
-// 	{
-// 		path = ft_strjoin(path, get_path(env, splited_arg[i]));
-// 		path = ft_strjoin(path, "/");
-// 		i++;
-// 	}
-// 	if (chdir(path) == -1)
-// 		write(2, "\n", 17);
-// 	free(splited_arg);
-// 	free(cwd);
-// 	free(path);
-// }
 
 char	*get_env_var(t_env **env, char *str)
 {
@@ -94,7 +38,7 @@ void	_cd(t_env **env, char *arg)
 
 	OLDPWD = ft_malloc(1024);
 	OLDPWD = getcwd(OLDPWD, 1024);
-	printf(" cwd : %s\n", OLDPWD);
+	// printf(" cwd : %s\n", OLDPWD);
 	// _export(env, ft_strjoin(ft_strdup("OLDPWD="), OLDPWD));
 	if (!arg || (arg[0] == '~' && ft_strlen(arg) == 1))
 	{
@@ -113,7 +57,7 @@ void	_cd(t_env **env, char *arg)
 	}
 	PWD = ft_malloc(1024);
 	getcwd(PWD, 1024);
-	printf("\n cwd : %s\n", PWD);
+	// printf("\n cwd : %s\n", PWD);
 	// _export(env, ft_strjoin("PWD=", PWD));
 	free(PWD);
 	free(OLDPWD);

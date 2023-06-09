@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:22:38 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/28 10:14:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 14:56:05 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*get_abs_cmd(char *cmd, char *path)
 		}
 		i++;
 	}
-	free(tmp);
+	// free(tmp);
 	return (NULL);
 }
 
@@ -50,20 +50,23 @@ char	*get_cmd_path(char *cmd, t_env **env)
 
 int	a_builtin_cmd(char *cmd, char **args, t_env **env)
 {
-	if (!ft_strncmp("cd", cmd, ft_strlen(cmd)))
+	if (!ft_strncmp("cd", cmd, ft_max(ft_strlen(cmd), ft_strlen("cd"))))
 		_cd(env, args[0]);
-	else if (ft_strncmp("echo", cmd, ft_strlen(cmd)))
+	else if (!ft_strncmp("export", cmd, ft_max(ft_strlen(cmd),
+					ft_strlen("export"))))
+		_export(env, args);
+	else if (!ft_strncmp("env", cmd, ft_max(ft_strlen(cmd), ft_strlen("env"))))
+		_env(env);
+	else if (!ft_strncmp("pwd", cmd, ft_max(ft_strlen(cmd), ft_strlen("pwd"))))
+		_pwd();
+	else if (!ft_strncmp("echo", cmd, ft_max(ft_strlen(cmd),
+					ft_strlen("echo"))))
 		_echo(args);
-	// else if (ft_strncmp("env",cmd, ft_strlen(cmd)))
-	// 	_env(env);
+	else if (!ft_strncmp("unset", cmd, ft_max(ft_strlen(cmd),
+					ft_strlen("unset"))))
+		_unset(env, args);
 	// else if (ft_strncmp("exit",cmd, ft_strlen(cmd)))
 	// 	/*env*/;
-	// else if (ft_strncmp("export",cmd, ft_strlen(cmd)))
-	// 	_export(env, args);
-	// else if (ft_strncmp("pwd",cmd, ft_strlen(cmd)))
-	// 	_pwd();
-	// else if (ft_strncmp("unset",cmd, ft_strlen(cmd)))
-	// 	_unset(env, args);
 	else
 		return (0);
 	return (1);

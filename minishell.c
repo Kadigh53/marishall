@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:35:54 by yel-hadd          #+#    #+#             */
-/*   Updated: 2023/05/28 23:36:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:43:14 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,25 @@ int	main(int ac, char **av, char **env)
 	(void)av;
 	env_lst = set_env(env);
 	tmp = env_lst;
-	// while (tmp)
-	// {
-	// 	printf("%s\n", tmp->env_var);
-	// 	tmp = tmp->next;
-	// }
-	// return (0);
 	while (1)
 	{
-		// command = readline("marishall$ ");
-		command = "export ";
+		command = readline("\033[32m marishall$ \033[0m");
+		// command = ft_strdup("export Aa=ass ");
+		// cmds = ft_split(command, ' ');
+		// execute(cmds[0], cmds + 1, &env_lst);
+		// printf("\n\n");
+		// command = ft_strdup("export ");
+		// cmds = ft_split(command, ' ');
+		// execute(cmds[0], cmds + 1, &env_lst);
+		// printf("\n\n");
+		// command = ft_strdup("export bb ");
+		// cmds = ft_split(command, ' ');
+		// execute(cmds[0], cmds + 1, &env_lst);
+		// printf("\n\n");
+		// command = ft_strdup("export bb=bss ");
 		cmds = ft_split(command, ' ');
 		execute(cmds[0], cmds + 1, &env_lst);
-		break ;
+		// break ;
 		if (!command)
 			continue ;
 		add_history(command);
