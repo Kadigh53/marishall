@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:35:54 by yel-hadd          #+#    #+#             */
-/*   Updated: 2023/06/09 17:43:14 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/10 11:18:01 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int ac, char **av, char **env)
 	while (1)
 	{
 		command = readline("\033[32m marishall$ \033[0m");
-		// command = ft_strdup("export Aa=ass ");
+		// command = ft_strdup("ls ");
 		// cmds = ft_split(command, ' ');
 		// execute(cmds[0], cmds + 1, &env_lst);
 		// printf("\n\n");
@@ -49,7 +49,7 @@ int	main(int ac, char **av, char **env)
 		// printf("\n\n");
 		// command = ft_strdup("export bb=bss ");
 		cmds = ft_split(command, ' ');
-		execute(cmds[0], cmds + 1, &env_lst);
+		cmd_execute(cmds[0], cmds, &env_lst);
 		// break ;
 		if (!command)
 			continue ;

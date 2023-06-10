@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 23:11:39 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/06/09 14:56:19 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/10 10:36:21 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void	_unset(t_env **env, char **args);
 
 /***************execute fcts**************/
 
-void	execute(char *cmd, char **cmd_args, t_env **env);
+void	execute(char *cmd, char **cmd_args, char **env);
+char	**envlist_toarray(t_env **env);
 
 /************error function *************/
 
@@ -64,7 +65,7 @@ void		*ft_memcpy(void *dst, void *src, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
-void		execute(char *cmd, char **cmd_args, t_env **env);
+void		cmd_execute(char *cmd, char **cmd_args, t_env **env);
 char		**envlist_toarray(t_env **env);
 
 #endif

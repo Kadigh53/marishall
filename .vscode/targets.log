@@ -8,15 +8,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Thu Jun  1 09:23:46 2023
+# Make data base, printed on Sat Jun 10 09:31:26 2023
 
 # Variables
 
- 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # makefile (from `Makefile', line 19)
@@ -40,19 +41,23 @@ _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/aaoutem-/Desktop
 # environment
-PATH = /usr/bin:/bin:/usr/sbin:/sbin
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
 # makefile (from `Makefile', line 47)
 OBJ_F = ${SRC:.c=.o}
 # environment
-LaunchInstanceID = B4E49182-7A2D-47D9-BBAE-997AA9B2D2F8
+LaunchInstanceID = CD2BF2FC-CDD3-42B9-8D4F-C46DDEF14445
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.JE7MzkoyzX/Listeners
+LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.3oJtfYSVyF/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -66,39 +71,51 @@ HOME = /Users/aaoutem-
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/aaoutem-/Library/Application Support/Code/CachedData/b3e4e68a0bc097f0ae7907b217c1119af9e03435
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/aaoutem-/Library/Application Support/Code/CachedData/b380da4ef1ee00e224a15c1d4d9793e27c2b6302
 # environment
 LOGNAME = aaoutem-
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ZSH = /Users/aaoutem-/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
 # environment
-SHLVL = 1
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 3
 # makefile (from `Makefile', line 16)
 CC = gcc
-# environment
-VSCODE_CRASH_REPORTER_SANDBOXED_HINT = 1
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = aaoutem-
 # makefile
 .DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:411B0E8C-A43A-4E20-AEA9-9BAF8EEBD2F2
 # makefile (from `Makefile', line 15)
 NAME = minishell
+# environment
+LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -106,9 +123,7 @@ TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cgx00033z8/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/aaoutem-/Library/Application Support/Code/1.78-main.sock
-# environment
-MallocNanoZone = 0
+VSCODE_IPC_HOOK = /Users/aaoutem-/Library/Application Support/Code/1.79-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -116,11 +131,19 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
+TERM_PROGRAM_VERSION = 3.4.13
+# environment
+XPC_SERVICE_NAME = 0
+# environment
+LC_TERMINAL_VERSION = 3.4.13
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
+# environment
+ITERM_SESSION_ID = w0t0p0:411B0E8C-A43A-4E20-AEA9-9BAF8EEBD2F2
+# environment
+COLORFGBG = 7;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x18FE8:0x0:0x0
 # environment
@@ -129,6 +152,10 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+ITERM_PROFILE = Default
+# environment
+PAGER = less
 # environment
 LC_ALL = C
 # environment
@@ -146,9 +173,12 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 28117
+TERM = xterm-256color
+# environment
+VSCODE_PID = 13797
 # variable set hash-table stats:
-# Load=67/1024=7%, Rehash=0, Collisions=1/100=1%
+ 
+# Load=82/1024=8%, Rehash=0, Collisions=4/115=3%
 
 # Pattern-specific Variable Values
 
@@ -156,9 +186,9 @@ VSCODE_PID = 28117
 
 # Directories
 
-# . (device 16777228, inode 6286121): 19 files, no impossibilities.
+# . (device 16777228, inode 6286121): 16 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -330,13 +360,12 @@ execution/Builtins/cd.c:
 # Not a target:
 utils/ft_malloc.o:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
 minishell: minishell.o utils/ft_strncmp.o utils/ft_strlen.o utils/ft_substr.o utils/ft_strdup.o utils/ft_bzero.o utils/ft_memcpy.o utils/ft_memset.o utils/ft_calloc.o utils/ft_malloc.o utils/ft_split.o utils/ft_strjoin.o utils/set_env.o utils/ft_lstnew.o utils/ft_lstsize.o utils/ft_lstadd_back.o utils/ft_lstadd_front.o utils/get_newenv.o utils/set_env.o execution/cmd_execute.o execution/Builtins/cd.o execution/Builtins/pwd.o execution/Builtins/env.o execution/Builtins/echo.o execution/Builtins/exit.o execution/Builtins/unset.o execution/Builtins/export.o minishell.c utils/ft_strncmp.c utils/ft_strlen.c utils/ft_substr.c utils/ft_strdup.c utils/ft_bzero.c utils/ft_memcpy.c utils/ft_memset.c utils/ft_calloc.c utils/ft_malloc.c utils/ft_split.c utils/ft_strjoin.c utils/set_env.c utils/ft_lstnew.c utils/ft_lstsize.c utils/ft_lstadd_back.c utils/ft_lstadd_front.c utils/get_newenv.c utils/set_env.c execution/cmd_execute.c execution/Builtins/cd.c execution/Builtins/pwd.c execution/Builtins/env.c execution/Builtins/echo.c execution/Builtins/exit.c execution/Builtins/unset.c execution/Builtins/export.c
 #  Implicit rule search has not been done.
-#  Last modified 2023-05-31 18:12:47
+#  Last modified 2023-06-09 19:42:33
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -444,6 +473,7 @@ utils/ft_lstadd_back.o:
 
 # Not a target:
 execution/Builtins/export.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -538,7 +568,7 @@ utils/ft_strlen.c:
 # Not a target:
 minishell.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-05-31 18:12:40
+#  Last modified 2023-06-09 19:42:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -593,6 +623,6 @@ execution/Builtins/unset.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Jun  1 09:23:46 2023
+# Finished Make data base on Sat Jun 10 09:31:26 2023
 
  

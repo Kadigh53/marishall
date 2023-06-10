@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 16:24:59 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/05/27 23:18:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/10 10:50:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ char	**envlist_toarray(t_env **env)
 	while (tmp)
 	{
 		env_array[i] = ft_strdup(tmp->env_var);
+		tmp = tmp->next;
 		i++;
 	}
+	env_array[i] = NULL;
 	return (env_array);
 }

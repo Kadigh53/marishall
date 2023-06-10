@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:09:19 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/06/09 19:45:45 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/10 09:53:51 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	export_with_noarg(t_env **env)
 	return ;
 }
 
-
 void	export_to_env(t_env **env, char *arg, int var_len)
 {
 	t_env	*tmp;
@@ -52,6 +51,7 @@ void	export_to_env(t_env **env, char *arg, int var_len)
 		if (!ft_strncmp(tmp->env_var, arg, var_len))
 		{
 			tmp->env_var = arg;
+			tmp->env_or_export = 0;
 			return ;
 			// node = ft_lstnew(arg);
 			// node->env_or_export = 0;

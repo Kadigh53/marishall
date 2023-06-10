@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 17:22:38 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/06/09 14:56:05 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/10 12:42:40 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,17 @@ char	*get_abs_cmd(char *cmd, char *path)
 	int		i;
 
 	i = 0;
+	tmp = ft_strjoin(ft_strdup("/"), cmd);
 	path_array = ft_split(path, ':');
 	while (path_array[i])
 	{
-		tmp = ft_strjoin(path_array[i], "/");
-		if (!access(ft_strjoin(tmp, cmd), X_OK))
+		// tmp = ft_strjoin(path_array[i], "/");
+		if (!access(ft_strjoin(ft_strdup(path_array[i]), tmp), X_OK))
 		{
 			// free(tmp);
-			return (ft_strjoin(tmp, cmd));
+			// printf("%s\n", ft_strjoin(path_array[i], tmp));
+			// exit(0);
+			return (ft_strjoin(path_array[i], tmp));
 		}
 		i++;
 	}
@@ -66,24 +69,49 @@ int	a_builtin_cmd(char *cmd, char **args, t_env **env)
 					ft_strlen("unset"))))
 		_unset(env, args);
 	// else if (ft_strncmp("exit",cmd, ft_strlen(cmd)))
-	// 	/*env*/;
+	// 	/*exit*/;
 	else
 		return (0);
 	return (1);
 }
 
-void	execute(char *cmd, char **cmd_args, t_env **env)
+void	execute(char *cmd, char **cmd_args, char **env)
+{
+	int	pid;
+
+	pid = fork();
+	if (pid == 0)
+	{
+		if (execve(cmd, cmd_args, env) == -1)
+			printf("error:execve failed \n");
+		// exit(1);
+	}
+	// (void)env;
+	// printf("%s\n", cmd);
+	wait(NULL);
+}
+
+void	cmd_execute(char *cmd, char **cmd_args, t_env **env)
 {
 	char	*cmd_path;
+	char	**p;
 
-	if (a_builtin_cmd(cmd, cmd_args, env))
+	// int		i;
+	if (a_builtin_cmd(cmd, cmd_args + 1, env))
 		return ;
 	else
 	{
 		cmd_path = get_cmd_path(cmd, env);
 		if (!cmd_path)
 			error("ERROR : command not found\n");
-		if (execve(cmd_path, cmd_args, envlist_toarray(env)) == -1)
-			error("ERROR:execve() failed\n");
+		printf("%s\n", cmd_path);
+		p = envlist_toarray(env);
+		// i = -1;
+		// while (p[++i])
+		// 	printf("%s\n", p[i]);
+		// exit(0);
+		execute(cmd_path, cmd_args, p);
+		// if (execve(cmd_path, cmd_args, envlist_toarray(env)) == -1)
+		// 	error("ERROR:execve() failed\n");
 	}
 }
