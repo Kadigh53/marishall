@@ -1,6 +1,7 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/aaoutem-/Desktop/projects/minishell'
 gcc -Wall minishell.c 
+ 
 gcc -Wall utils/ft_strncmp.c 
 gcc -Wall utils/ft_strlen.c 
 gcc -Wall utils/ft_substr.c 
@@ -9,24 +10,27 @@ gcc -Wall utils/ft_bzero.c
 gcc -Wall utils/ft_memcpy.c 
 gcc -Wall utils/ft_memset.c 
 gcc -Wall utils/ft_calloc.c 
+ 
 gcc -Wall utils/ft_malloc.c 
 gcc -Wall utils/ft_split.c 
 gcc -Wall utils/ft_strjoin.c 
 gcc -Wall utils/set_env.c 
 gcc -Wall utils/ft_lstnew.c 
 gcc -Wall utils/ft_lstsize.c 
- 
 gcc -Wall utils/ft_lstadd_back.c 
+ 
 gcc -Wall utils/ft_lstadd_front.c 
 gcc -Wall utils/get_newenv.c 
 gcc -Wall execution/cmd_execute.c 
 gcc -Wall execution/Builtins/cd.c 
+ 
 gcc -Wall execution/Builtins/pwd.c 
 gcc -Wall execution/Builtins/env.c 
 gcc -Wall execution/Builtins/echo.c 
 gcc -Wall execution/Builtins/unset.c 
 gcc -Wall execution/Builtins/export.c 
-make: Leaving directory `/Users/aaoutem-/Desktop/projects/minishell'
  
 make: *** No rule to make target `execution/Builtins/exit.c', needed by `execution/Builtins/exit.o'.
 
+make: Leaving directory `/Users/aaoutem-/Desktop/projects/minishell'
+ 

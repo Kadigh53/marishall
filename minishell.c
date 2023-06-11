@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:35:54 by yel-hadd          #+#    #+#             */
-/*   Updated: 2023/06/10 11:18:01 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/11 15:23:32 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int ac, char **av, char **env)
 		// printf("\n\n");
 		// command = ft_strdup("export bb=bss ");
 		cmds = ft_split(command, ' ');
-		cmd_execute(cmds[0], cmds, &env_lst);
+		cmd_execute(cmds, &env_lst, 1);
 		// break ;
 		if (!command)
 			continue ;
