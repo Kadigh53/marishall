@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 23:11:39 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/06/11 15:18:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/12 11:21:35 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ typedef struct env
 	struct env	*prev;
 	struct env	*next;
 }	t_env;
+
+
+typedef struct s_multi_cmds
+{
+	char				**cmds;
+	struct s_multi_cmds	*next;
+}	t_multi_cmds;
 
 t_env	*set_env(char **envp);
 t_env	*ft_lstnew(char *content);
@@ -75,7 +82,8 @@ char	*get_abs_cmd(char *cmd, char *path);
 /*________________error function_______________*/
 
 void		error(char *err_msg);
-void	cmd_execute(char **cmd_args, t_env **env, int n);
+// void	cmd_execute(char **cmd_args, t_env **env, int n);
+void	cmd_execute(t_multi_cmds **multi_cmds0, char **cmd_args, t_env **env);
 char		**envlist_toarray(t_env **env);
 
 #endif

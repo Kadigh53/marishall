@@ -6,35 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 20:50:04 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/06/11 15:23:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/12 11:36:44 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
-// int	a_builtin_cmd(char *cmd, char **args, t_env **env)
-// {
-// 	if (!ft_strncmp("cd", cmd, ft_max(ft_strlen(cmd), ft_strlen("cd"))))
-// 		_cd(env, args[0]);
-// 	else if (!ft_strncmp("export", cmd, ft_max(ft_strlen(cmd),
-// 					ft_strlen("export"))))
-// 		_export(env, args);
-// 	else if (!ft_strncmp("env", cmd, ft_max(ft_strlen(cmd), ft_strlen("env"))))
-// 		_env(env);
-// 	else if (!ft_strncmp("pwd", cmd, ft_max(ft_strlen(cmd), ft_strlen("pwd"))))
-// 		_pwd();
-// 	else if (!ft_strncmp("echo", cmd, ft_max(ft_strlen(cmd),
-// 					ft_strlen("echo"))))
-// 		_echo(args);
-// 	else if (!ft_strncmp("unset", cmd, ft_max(ft_strlen(cmd),
-// 					ft_strlen("unset"))))
-// 		_unset(env, args);
-// 	// else if (ft_strncmp("exit",cmd, ft_strlen(cmd)))
-// 	// 	/*exit*/;
-// 	else
-// 		return (0);
-// 	return (1);
-// }
 
 void	execute_cmd(char **cmd, t_env **env)
 {
@@ -59,6 +35,8 @@ void	process(char **cmd, t_env **env)
 	{
 		close(fds[0]);
 		dup2(fds[1], STDOUT_FILENO);
+		if (a_builtin_cmd(cmd[0], cmd + 1, env))
+			exit(0);
 		execute_cmd(cmd, env);
 	}
 	else
@@ -68,23 +46,24 @@ void	process(char **cmd, t_env **env)
 	}
 }
 
-void	cmd_execute(char **cmd_args, t_env **env, int n)
+void	cmd_execute(t_multi_cmds **multi_cmds, char **cmd_args, t_env **env)
 {
-	int	i;
+	int				i;
+	t_multi_cmds	*tmp;
 
 	i = -1;
-	if (n == 0)
+	tmp = *multi_cmds;
+	if (!(*multi_cmds)->next)
 	{
 		single_cmd_execute(cmd_args[0], cmd_args, env);
 		return ;
 	}
-	while (++i < n)
+	while (tmp->next)
 	{
-		if (a_builtin_cmd(cmd_args[0], cmd_args + 1, env))
-			continue ;
-		else
-			process(cmd_args+i, env);
+		process(tmp->cmds, env);
+		tmp = tmp->next;
 	}
+	single_cmd_execute(tmp->cmds[0], tmp->cmds, env);
 	while (wait(NULL) != -1)
 		;
 }

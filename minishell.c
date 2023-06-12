@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 21:35:54 by yel-hadd          #+#    #+#             */
-/*   Updated: 2023/06/11 15:23:32 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/06/12 11:37:36 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,37 +22,38 @@
 
 int	main(int ac, char **av, char **env)
 {
-	char	*command;
-	t_env	*env_lst;
-	t_env	*tmp;
-	char	**cmds;
+	char			*command;
+	t_env			*env_lst;
+	t_env			*tmp;
+	char			**cmds;
+	t_multi_cmds	*multi_cmds0;
+	t_multi_cmds	*multi_cmds1;
+	t_multi_cmds	*multi_cmds2;
 
+	command = NULL;
 	// extern char	**environ;
 	(void)ac;
 	(void)av;
 	env_lst = set_env(env);
 	tmp = env_lst;
+	multi_cmds0 = calloc(1, sizeof(t_multi_cmds));
+	multi_cmds1 = calloc(1, sizeof(t_multi_cmds));
+	multi_cmds2 = calloc(1, sizeof(t_multi_cmds));
+	multi_cmds0->next = multi_cmds1;
+	multi_cmds1->next = multi_cmds2;
+	multi_cmds2->next = NULL;
 	while (1)
 	{
-		command = readline("\033[32m marishall$ \033[0m");
-		// command = ft_strdup("ls ");
+		// command = readline("\033[32m marishall$ \033[0m");
+		multi_cmds0->cmds = ft_split(" cat Makefile", ' ');
+		multi_cmds1->cmds = ft_split("sleep 2", ' ');
+		multi_cmds2->cmds = ft_split("ls ", ' ');
 		// cmds = ft_split(command, ' ');
-		// execute(cmds[0], cmds + 1, &env_lst);
-		// printf("\n\n");
-		// command = ft_strdup("export ");
-		// cmds = ft_split(command, ' ');
-		// execute(cmds[0], cmds + 1, &env_lst);
-		// printf("\n\n");
-		// command = ft_strdup("export bb ");
-		// cmds = ft_split(command, ' ');
-		// execute(cmds[0], cmds + 1, &env_lst);
-		// printf("\n\n");
-		// command = ft_strdup("export bb=bss ");
-		cmds = ft_split(command, ' ');
-		cmd_execute(cmds, &env_lst, 1);
-		// break ;
-		if (!command)
-			continue ;
+		cmds = NULL;
+		cmd_execute(&multi_cmds0, cmds, &env_lst);
+		break ;
+		// if (!command)
+		// 	continue ;
 		add_history(command);
 		free(command);
 	}
